@@ -27,6 +27,18 @@ export async function deleteParticipant(id) {
     return checkError(response);
 }
 
+//create a participant using the participant argument and attach it to a workshop
+export async function createParticipants(participant) {
+    const response = await client
+        .from('participants')
+        .insert({
+            ...participant,
+            user_id: client.auth.session().user.id,
+        });
+
+    return checkError(response);
+}
+
 export function checkAuth() {
     const user = getUser();
 
