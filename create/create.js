@@ -35,7 +35,7 @@ window.addEventListener('load', async () => {
     //grab the select HTML element from the DOM
     const select = document.querySelector('select');
 
-    //go get the workshops from supaabase
+    //go get the workshops from supabase
     const workshops = await getWorkshops();
 
     //for each workshop

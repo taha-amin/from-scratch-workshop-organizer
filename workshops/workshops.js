@@ -31,7 +31,7 @@ function displayWorkshops(workshops) {
         for (let participant of workshop.participants) {
             //make an element with the css class 'participant', and put that participants name in the text content
             const participantEl = document.createElement('div');
-            participantEl.add('participant');
+            participantEl.classList.add('participant');
             participantEl.textContent = participant.name;
 
             //add an event listener to the participant el. On click, delete that participant, then refetch and redisplay all workshops
