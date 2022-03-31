@@ -29,3 +29,35 @@ form.addEventListener('submit', async (e) => {
     //after clicking SUBMIT redirect to main workshop page
     window.location.href = '../workshops';
 });
+
+window.addEventListener('load', async () => {
+    //dynamically fill in the workshops dropdown from supabase
+    //grab the select HTML element from the DOM
+    const select = document.querySelector('select');
+
+    //go get the workshops from supaabase
+    const workshops = await getWorkshops();
+
+    //for each workshop
+    //create an option tag
+    //set the option's value and text content
+    //and append the option to the select
+    for (let workshop of workshops) {
+
+        //create an option tag
+        const option = document.createElement('option');
+
+        //set the option's value and text content
+        option.value = workshop.id;
+        option.textContent = workshop.name;
+
+        //append the option to the select
+        select.append(option);
+    }
+});
+
+checkAuth();
+
+logoutButton.addEventListener('click', () => {
+    logout();
+});
