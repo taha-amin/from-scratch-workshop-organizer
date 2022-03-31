@@ -16,6 +16,17 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+//delete a participant in supabase using the id argument
+export async function deleteParticipant(id) {
+    const response = await client
+        .from('participants')
+        .delete()
+        .match({ id: id })
+        .single();
+
+    return checkError(response);
+}
+
 export function checkAuth() {
     const user = getUser();
 
