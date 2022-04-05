@@ -129,3 +129,47 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+.workshops-container {
+    width: 80%;
+    min-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.workshop {
+    width: 200px;
+    margin: 10px;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+.workshop h3 {
+    margin: 0;
+}
+
+.participants {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.participant {
+    margin: 3px;
+    padding: 3px;
+    border: dotted 2px blue;
+    cursor: pointer;
+}
+
+.participant-form {
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.participant-form label {
+    display: block;
+}
+
+.create-main {
+    padding-top: 40px;
+}
